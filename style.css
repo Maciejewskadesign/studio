@@ -4645,3 +4645,226 @@ body.gallery-page .gallery-card--wide figcaption{
     gap:10px !important;
   }
 }
+
+
+/* V44 — cleanup podpisów, nazwa Oaza i większe odstępy w realizacjach */
+body:not(.gallery-page) .faq .project-showcase__credit,
+body:not(.gallery-page) .scope-item .project-showcase__credit,
+body:not(.gallery-page) .social-showcase .project-showcase__credit,
+body:not(.gallery-page) .contact .project-showcase__credit,
+body:not(.gallery-page) .manifest .project-showcase__credit,
+body:not(.gallery-page) .quote-band .project-showcase__credit {
+  display: none !important;
+}
+
+body.gallery-page .gallery-projects {
+  gap: 84px !important;
+}
+
+body.gallery-page .gallery-project {
+  gap: 24px !important;
+}
+
+body.gallery-page .gallery-project__head {
+  padding-top: 28px !important;
+}
+
+body.gallery-page .gallery-project__head h2 {
+  font-size: clamp(32px, 4.6vw, 66px) !important;
+  line-height: 0.98 !important;
+}
+
+@media (max-width: 760px) {
+  body.gallery-page .gallery-projects {
+    gap: 64px !important;
+  }
+
+  body.gallery-page .gallery-project {
+    gap: 16px !important;
+  }
+
+  body.gallery-page .gallery-project__head {
+    padding-top: 20px !important;
+  }
+
+  body.gallery-page .gallery-project__head h2 {
+    font-size: clamp(25px, 7.4vw, 36px) !important;
+  }
+}
+
+
+/* V45 — powrót bez Oazy, czysty FAQ, podpisy jako opis i równa galeria */
+.project-showcase__credit,
+body.gallery-page .gallery-card figcaption,
+body.gallery-page .gallery-card--wide figcaption{
+  display:none !important;
+}
+
+.projects__credit-note,
+.gallery-project__credit-note{
+  margin:12px 0 0;
+  color:rgba(66,68,70,.66);
+  font-family:"Manrope",sans-serif;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.55;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.projects__intro{
+  align-items:end;
+  gap:24px;
+}
+
+body.gallery-page .gallery-projects{
+  display:grid !important;
+  gap:96px !important;
+}
+
+body.gallery-page .gallery-project{
+  display:grid !important;
+  gap:28px !important;
+}
+
+body.gallery-page .gallery-project__head{
+  width:min(100% - 48px, var(--container)) !important;
+  margin-inline:auto !important;
+  display:grid !important;
+  grid-template-columns:auto minmax(0, 1fr) !important;
+  align-items:end !important;
+  justify-content:start !important;
+  gap:22px !important;
+  padding-top:30px !important;
+  border-top:1px solid rgba(66,68,70,.22) !important;
+}
+
+body.gallery-page .gallery-project__title-wrap{
+  min-width:0 !important;
+}
+
+body.gallery-page .gallery-project__head h2{
+  margin:0 !important;
+  max-width:100% !important;
+  font-size:clamp(30px,4.2vw,58px) !important;
+  line-height:1.02 !important;
+  overflow-wrap:normal !important;
+  word-break:normal !important;
+  hyphens:none !important;
+}
+
+body.gallery-page .gallery-project__grid{
+  width:min(100% - 48px, var(--container)) !important;
+  margin-inline:auto !important;
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:18px !important;
+  columns:unset !important;
+  grid-auto-flow:row dense !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card,
+body.gallery-page .gallery-project__grid .gallery-card--wide{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  border-radius:18px !important;
+  background:#ebe9e5 !important;
+  box-shadow:none !important;
+  break-inside:auto !important;
+  aspect-ratio:4 / 3 !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card img,
+body.gallery-page .gallery-project__grid .gallery-card:hover img,
+body.gallery-page .gallery-project__grid .gallery-card--wide img,
+body.gallery-page .gallery-project__grid .gallery-card--wide:hover img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  transform:none !important;
+  filter:none !important;
+  border-radius:inherit !important;
+  background:#ebe9e5 !important;
+}
+
+@media (max-width: 980px){
+  body.gallery-page .gallery-project__grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px){
+  .projects__intro{
+    align-items:start !important;
+  }
+
+  .projects__credit-note,
+  .gallery-project__credit-note{
+    margin-top:10px !important;
+    font-size:10px !important;
+    line-height:1.5 !important;
+    letter-spacing:.07em !important;
+  }
+
+  body.gallery-page .gallery-projects{
+    gap:72px !important;
+  }
+
+  body.gallery-page .gallery-project{
+    gap:18px !important;
+  }
+
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid{
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+  }
+
+  body.gallery-page .gallery-project__head{
+    grid-template-columns:auto minmax(0,1fr) !important;
+    align-items:start !important;
+    gap:12px !important;
+    padding-top:22px !important;
+  }
+
+  body.gallery-page .gallery-project__head h2{
+    font-size:clamp(25px,7.6vw,34px) !important;
+    line-height:1.08 !important;
+  }
+
+  body.gallery-page .gallery-project__grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:10px !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card,
+  body.gallery-page .gallery-project__grid .gallery-card--wide{
+    border-radius:14px !important;
+    aspect-ratio:1 / 1 !important;
+  }
+}
+
+@media (max-width: 430px){
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid{
+    width:calc(100% - 18px) !important;
+  }
+
+  body.gallery-page .gallery-project__grid{
+    gap:9px !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card,
+  body.gallery-page .gallery-project__grid .gallery-card--wide{
+    border-radius:12px !important;
+  }
+}
