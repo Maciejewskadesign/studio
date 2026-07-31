@@ -115,11 +115,16 @@ faqItems.forEach(item => {
 });
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    formNote.textContent = 'Gotowe — to jest wersja frontowa. Po podpięciu skrzynki albo integracji formularz będzie wysyłał wiadomości normalnie.';
-    formNote.classList.add('is-success');
-    contactForm.reset();
+  const nextField = document.getElementById('formNext');
+  if (nextField) {
+    nextField.value = `${window.location.origin}${window.location.pathname}#kontakt`;
+  }
+
+  contactForm.addEventListener('submit', () => {
+    if (formNote) {
+      formNote.textContent = 'Wysyłam wiadomość na interiordesign@vp.pl...';
+      formNote.classList.add('is-success');
+    }
   });
 }
 
