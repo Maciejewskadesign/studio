@@ -4312,3 +4312,126 @@ body.gallery-page .gallery-project__grid .gallery-card:hover img{
     line-height: 1.1 !important;
   }
 }
+
+
+/* V42 — poprawa galerii realizacji na mobile */
+body.gallery-page .gallery-grid-section,
+body.gallery-page .gallery-projects,
+body.gallery-page .gallery-project,
+body.gallery-page .gallery-project__grid,
+body.gallery-page .gallery-card,
+body.gallery-page .gallery-card img{
+  box-sizing:border-box;
+}
+
+body.gallery-page .gallery-project__grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px !important;
+  columns:unset !important;
+  width:100% !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card,
+body.gallery-page .gallery-project__grid .gallery-card--wide{
+  margin:0 !important;
+  width:100% !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  border-radius:20px !important;
+  background:transparent !important;
+  break-inside:auto !important;
+  box-shadow:none !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card img,
+body.gallery-page .gallery-project__grid .gallery-card:hover img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  background:transparent !important;
+  transform:none !important;
+  filter:none !important;
+}
+
+@media (max-width:760px){
+  body.gallery-page .gallery-grid-section{
+    padding-inline:0 !important;
+    overflow:visible !important;
+  }
+
+  body.gallery-page .gallery-projects{
+    gap:56px !important;
+    width:100% !important;
+  }
+
+  body.gallery-page .gallery-project{
+    gap:14px !important;
+    width:100% !important;
+  }
+
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid{
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+    margin-inline:auto !important;
+  }
+
+  body.gallery-page .gallery-project__head{
+    padding-top:18px !important;
+    align-items:flex-start !important;
+    gap:10px !important;
+  }
+
+  body.gallery-page .gallery-project__head h2{
+    font-size:clamp(26px,8.2vw,36px) !important;
+    line-height:1.08 !important;
+    max-width:100% !important;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
+    hyphens:none !important;
+  }
+
+  body.gallery-page .gallery-project__grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:12px !important;
+    columns:unset !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card,
+  body.gallery-page .gallery-project__grid .gallery-card--wide{
+    border-radius:18px !important;
+    background:transparent !important;
+    margin:0 !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card img,
+  body.gallery-page .gallery-project__grid .gallery-card:hover img{
+    width:100% !important;
+    height:auto !important;
+    object-fit:cover !important;
+    background:transparent !important;
+  }
+}
+
+@media (max-width:390px){
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid{
+    width:calc(100% - 18px) !important;
+  }
+
+  body.gallery-page .gallery-project__grid{
+    gap:10px !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card,
+  body.gallery-page .gallery-project__grid .gallery-card--wide{
+    border-radius:16px !important;
+  }
+}
