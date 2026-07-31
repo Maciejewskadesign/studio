@@ -5201,3 +5201,20 @@ body.gallery-page .gallery-card--wide figcaption {
     font-size: 11px !important;
   }
 }
+
+
+/* V49 — podpis jasno informuje, że chodzi o zdjęcia */
+body.gallery-page .gallery-card figcaption,
+body.gallery-page .gallery-card--wide figcaption {
+  color: rgba(67, 61, 58, 0.82) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.01em !important;
+}
+
+@media (max-width: 680px) {
+  body.gallery-page .gallery-card figcaption,
+  body.gallery-page .gallery-card--wide figcaption {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+}
