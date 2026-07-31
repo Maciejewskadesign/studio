@@ -5020,3 +5020,156 @@ body.gallery-page .gallery-card--wide figcaption {
     padding: 7px 10px !important;
   }
 }
+
+
+/* V47 — większe realizacje, usunięte 04 i 05, podpis pod każdym zdjęciem */
+body.gallery-page .gallery-projects {
+  display: grid !important;
+  gap: 88px !important;
+}
+
+body.gallery-page .gallery-project {
+  display: grid !important;
+  gap: 24px !important;
+}
+
+body.gallery-page .gallery-project__head {
+  width: min(100% - 24px, 1480px) !important;
+  margin-inline: auto !important;
+  padding-top: 26px !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+
+body.gallery-page .gallery-project__head h2 {
+  font-size: clamp(34px, 4.8vw, 72px) !important;
+  line-height: 0.98 !important;
+}
+
+body.gallery-page .gallery-project__grid {
+  width: min(100% - 24px, 1480px) !important;
+  margin-inline: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  columns: unset !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card,
+body.gallery-page .gallery-project__grid .gallery-card--wide {
+  position: relative !important;
+  display: grid !important;
+  grid-template-rows: minmax(0, 1fr) auto !important;
+  align-content: start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  break-inside: auto !important;
+  aspect-ratio: auto !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card::after,
+body.gallery-page .gallery-project__grid .gallery-card--wide::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card img,
+body.gallery-page .gallery-project__grid .gallery-card:hover img,
+body.gallery-page .gallery-project__grid .gallery-card--wide img,
+body.gallery-page .gallery-project__grid .gallery-card--wide:hover img {
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: none !important;
+  filter: none !important;
+  background: transparent !important;
+  border-radius: 18px !important;
+}
+
+body.gallery-page .gallery-card figcaption,
+body.gallery-page .gallery-card--wide figcaption {
+  position: static !important;
+  display: block !important;
+  margin: 10px 0 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  color: rgba(67, 61, 58, 0.82) !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.02em !important;
+  white-space: normal !important;
+  text-align: left !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 920px) {
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid {
+    width: calc(100% - 18px) !important;
+  }
+
+  body.gallery-page .gallery-project__grid {
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.gallery-page .gallery-projects {
+    gap: 56px !important;
+  }
+
+  body.gallery-page .gallery-project {
+    gap: 16px !important;
+  }
+
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid {
+    width: calc(100% - 14px) !important;
+  }
+
+  body.gallery-page .gallery-project__head {
+    padding-top: 18px !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  body.gallery-page .gallery-project__head h2 {
+    font-size: clamp(24px, 7.6vw, 34px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.gallery-page .gallery-project__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card img,
+  body.gallery-page .gallery-project__grid .gallery-card:hover img,
+  body.gallery-page .gallery-project__grid .gallery-card--wide img,
+  body.gallery-page .gallery-project__grid .gallery-card--wide:hover img {
+    border-radius: 14px !important;
+  }
+
+  body.gallery-page .gallery-card figcaption,
+  body.gallery-page .gallery-card--wide figcaption {
+    margin-top: 7px !important;
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+}
