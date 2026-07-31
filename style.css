@@ -4123,3 +4123,192 @@ body.gallery-page .gallery-project__grid .gallery-card:hover img{
     font-size: clamp(25px, 8.7vw, 36px) !important;
   }
 }
+
+
+/* V39 — pełne wyrazy na mobile + menu pełną szerokością */
+@media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* Menu: pełna szerokość do krawędzi, nie pełny ekran w pionie, linki od lewej. */
+  body .site-nav {
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    max-height: min(72svh, 560px) !important;
+    padding: 26px 24px 28px !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+    justify-items: stretch !important;
+    align-content: start !important;
+    gap: 0 !important;
+    text-align: left !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border: 0 !important;
+    border-top: 1px solid rgba(255,255,255,.10) !important;
+    border-radius: 0 0 26px 26px !important;
+    background: #111212 !important;
+    box-shadow: 0 26px 54px rgba(0,0,0,.24) !important;
+  }
+
+  body .site-nav > a,
+  body .site-header.is-scrolled .site-nav > a {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    min-height: 56px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #f3f1ed !important;
+    text-align: left !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+    letter-spacing: .22em !important;
+    border-bottom: 1px solid rgba(255,255,255,.12) !important;
+  }
+
+  body .site-nav > a::after,
+  body .site-nav__extras > a::after {
+    display: none !important;
+  }
+
+  body .site-nav__extras,
+  body .site-nav__extras.mobile-only {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    justify-items: start !important;
+    gap: 12px !important;
+    padding-top: 20px !important;
+    text-align: left !important;
+  }
+
+  body .site-nav__extras > a,
+  body .site-header.is-scrolled .site-nav__extras > a,
+  body .site-nav__social {
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-grid !important;
+    place-items: center !important;
+    flex: 0 0 44px !important;
+    color: #f3f1ed !important;
+    border: 1px solid rgba(255,255,255,.16) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.055) !important;
+  }
+
+  body .site-nav__social svg,
+  body .site-nav__extras svg {
+    width: 19px !important;
+    height: 19px !important;
+    display: block !important;
+    fill: currentColor !important;
+  }
+
+  /* Pełne wyrazy — wyłączamy automatyczne dzielenie typu NAJLEP-SZYM. */
+  body :is(h1, h2, h3, .hero-title, .section-title, .about__dynamic-title, .quote-band__content p, .manifest__content h2, .social-showcase__head h2, .faq__content h2, .contact__content h2, .scope__heading h2, .project-showcase__content h3, .gallery-project__head h2, .gallery-hero h1) {
+    max-width: 100% !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    text-wrap: balance !important;
+  }
+
+  .manifest__content h2,
+  .social-showcase__head h2,
+  .faq__content h2,
+  .contact__content h2,
+  .scope__heading h2,
+  .about__dynamic-title {
+    font-size: clamp(31px, 8.8vw, 42px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.052em !important;
+  }
+
+  .contact__content h2,
+  .social-showcase__head h2,
+  .faq__content h2 {
+    max-width: 11.5em !important;
+  }
+
+  .manifest__content h2,
+  .quote-band__content p {
+    font-size: clamp(32px, 9vw, 43px) !important;
+    line-height: 1.08 !important;
+    max-width: 13.5em !important;
+  }
+
+  .project-showcase__content h3 {
+    font-size: clamp(27px, 7.8vw, 39px) !important;
+    line-height: 1.06 !important;
+    max-width: 12em !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+  }
+
+  .gallery-project__head h2,
+  .gallery-hero h1 {
+    font-size: clamp(29px, 8.4vw, 40px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .social-showcase,
+  .faq,
+  .contact__content,
+  .manifest__content,
+  .quote-band__content,
+  .scope__heading {
+    overflow: visible !important;
+  }
+
+  .social-showcase__head,
+  .faq__content,
+  .contact__content,
+  .manifest__content {
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body .site-nav {
+    top: 64px !important;
+    padding: 24px 20px 26px !important;
+    border-radius: 0 0 22px 22px !important;
+  }
+
+  body .site-nav > a,
+  body .site-header.is-scrolled .site-nav > a {
+    min-height: 52px !important;
+    font-size: 12px !important;
+    letter-spacing: .20em !important;
+  }
+
+  .manifest__content h2,
+  .social-showcase__head h2,
+  .faq__content h2,
+  .contact__content h2,
+  .scope__heading h2,
+  .about__dynamic-title {
+    font-size: clamp(28px, 8.4vw, 34px) !important;
+    line-height: 1.1 !important;
+  }
+
+  .quote-band__content p {
+    font-size: clamp(29px, 8.4vw, 35px) !important;
+    line-height: 1.1 !important;
+  }
+}
