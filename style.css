@@ -4868,3 +4868,155 @@ body.gallery-page .gallery-project__grid .gallery-card--wide:hover img{
     border-radius:12px !important;
   }
 }
+
+
+/* V46 — galeria: 2 duże zdjęcia w rzędzie, równe kafle, podpis na każdym zdjęciu */
+body.gallery-page .gallery-projects {
+  display: grid !important;
+  gap: 92px !important;
+}
+
+body.gallery-page .gallery-project {
+  display: grid !important;
+  gap: 24px !important;
+}
+
+body.gallery-page .gallery-project__head {
+  width: min(100% - 40px, var(--container)) !important;
+  margin-inline: auto !important;
+  padding-top: 28px !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+
+body.gallery-page .gallery-project__grid {
+  width: min(100% - 40px, var(--container)) !important;
+  margin-inline: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  columns: unset !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card,
+body.gallery-page .gallery-project__grid .gallery-card--wide {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background: #f3f0ec !important;
+  box-shadow: none !important;
+  break-inside: auto !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card img,
+body.gallery-page .gallery-project__grid .gallery-card:hover img,
+body.gallery-page .gallery-project__grid .gallery-card--wide img,
+body.gallery-page .gallery-project__grid .gallery-card--wide:hover img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: none !important;
+  filter: none !important;
+  background: transparent !important;
+  border-radius: inherit !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card::after,
+body.gallery-page .gallery-project__grid .gallery-card--wide::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto 0 0 0 !important;
+  height: 34% !important;
+  background: linear-gradient(180deg, rgba(14,14,14,0) 0%, rgba(14,14,14,.56) 100%) !important;
+  pointer-events: none !important;
+}
+
+body.gallery-page .gallery-card figcaption,
+body.gallery-page .gallery-card--wide figcaption {
+  display: inline-flex !important;
+  position: absolute !important;
+  left: 14px !important;
+  bottom: 14px !important;
+  z-index: 3 !important;
+  max-width: calc(100% - 28px) !important;
+  padding: 8px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(20,20,20,.52) !important;
+  color: rgba(255,255,255,.96) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .05em !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 900px) {
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid {
+    width: calc(100% - 28px) !important;
+  }
+
+  body.gallery-page .gallery-project__grid {
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.gallery-page .gallery-projects {
+    gap: 62px !important;
+  }
+
+  body.gallery-page .gallery-project {
+    gap: 16px !important;
+  }
+
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid {
+    width: calc(100% - 18px) !important;
+  }
+
+  body.gallery-page .gallery-project__head {
+    padding-top: 18px !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  body.gallery-page .gallery-project__head h2 {
+    font-size: clamp(24px, 7.6vw, 34px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.gallery-page .gallery-project__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card,
+  body.gallery-page .gallery-project__grid .gallery-card--wide {
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 16px !important;
+  }
+
+  body.gallery-page .gallery-card figcaption,
+  body.gallery-page .gallery-card--wide figcaption {
+    left: 10px !important;
+    bottom: 10px !important;
+    max-width: calc(100% - 20px) !important;
+    font-size: 9px !important;
+    padding: 7px 10px !important;
+  }
+}
