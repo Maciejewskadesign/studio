@@ -4435,3 +4435,213 @@ body.gallery-page .gallery-project__grid .gallery-card:hover img{
     border-radius:16px !important;
   }
 }
+
+
+/* V43 — podpisy zdjęć realizacji */
+.project-showcase__credit{
+  position:absolute;
+  right:22px;
+  bottom:18px;
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(17,18,18,.44);
+  color:rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  font-family:"Manrope",sans-serif;
+  font-size:11px;
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:.08em;
+}
+
+body.gallery-page .gallery-card{
+  position:relative;
+}
+
+body.gallery-page .gallery-card figcaption{
+  position:absolute;
+  right:12px;
+  bottom:12px;
+  z-index:2;
+  max-width:calc(100% - 24px);
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(17,18,18,.46);
+  color:rgba(255,255,255,.96);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  font-family:"Manrope",sans-serif;
+  font-size:10px;
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:.08em;
+  pointer-events:none;
+}
+
+@media (max-width:760px){
+  .project-showcase__credit{
+    right:16px;
+    bottom:16px;
+    padding:7px 10px;
+    font-size:10px;
+    letter-spacing:.07em;
+    max-width:calc(100% - 32px);
+    text-align:right;
+  }
+
+  body.gallery-page .gallery-card figcaption{
+    right:10px;
+    bottom:10px;
+    max-width:calc(100% - 20px);
+    font-size:9px;
+    padding:6px 9px;
+    letter-spacing:.06em;
+  }
+}
+
+
+/* V43 — finalna naprawa galerii + podpisy zdjęć */
+body.gallery-page .gallery-projects{
+  display:grid !important;
+  gap:64px !important;
+}
+
+body.gallery-page .gallery-project{
+  display:grid !important;
+  gap:18px !important;
+}
+
+body.gallery-page .gallery-project__head{
+  width:min(100% - 40px, var(--container)) !important;
+  margin-inline:auto !important;
+  padding-top:22px !important;
+  align-items:flex-end !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+}
+
+body.gallery-page .gallery-project__grid{
+  width:min(100% - 40px, var(--container)) !important;
+  margin-inline:auto !important;
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  gap:18px !important;
+  columns:unset !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card,
+body.gallery-page .gallery-project__grid .gallery-card--wide{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  border-radius:18px !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  break-inside:auto !important;
+}
+
+body.gallery-page .gallery-project__grid .gallery-card img,
+body.gallery-page .gallery-project__grid .gallery-card:hover img,
+body.gallery-page .gallery-project__grid .gallery-card--wide img,
+body.gallery-page .gallery-project__grid .gallery-card--wide:hover img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  transform:none !important;
+  filter:none !important;
+  background:transparent !important;
+  border-radius:inherit !important;
+}
+
+body.gallery-page .gallery-card figcaption,
+body.gallery-page .gallery-card--wide figcaption{
+  display:inline-flex !important;
+  position:absolute !important;
+  right:12px !important;
+  bottom:12px !important;
+  z-index:3 !important;
+  max-width:calc(100% - 24px) !important;
+  padding:7px 10px !important;
+  border-radius:999px !important;
+  background:rgba(17,18,18,.54) !important;
+  color:rgba(255,255,255,.96) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  backdrop-filter:blur(10px) !important;
+  -webkit-backdrop-filter:blur(10px) !important;
+  font-family:"Manrope",sans-serif !important;
+  font-size:10px !important;
+  font-weight:600 !important;
+  line-height:1.2 !important;
+  letter-spacing:.06em !important;
+  white-space:normal !important;
+  pointer-events:none !important;
+}
+
+@media (max-width: 760px){
+  body.gallery-page .gallery-projects{
+    gap:52px !important;
+  }
+
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid{
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+  }
+
+  body.gallery-page .gallery-project__head{
+    padding-top:18px !important;
+    gap:10px !important;
+    align-items:flex-start !important;
+  }
+
+  body.gallery-page .gallery-project__head h2{
+    font-size:clamp(24px, 7.8vw, 34px) !important;
+    line-height:1.1 !important;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
+    hyphens:none !important;
+  }
+
+  body.gallery-page .gallery-project__grid{
+    grid-template-columns:minmax(0, 1fr) !important;
+    gap:12px !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card,
+  body.gallery-page .gallery-project__grid .gallery-card--wide{
+    border-radius:16px !important;
+  }
+
+  body.gallery-page .gallery-card figcaption,
+  body.gallery-page .gallery-card--wide figcaption{
+    right:10px !important;
+    bottom:10px !important;
+    max-width:calc(100% - 20px) !important;
+    font-size:9px !important;
+    padding:6px 9px !important;
+    letter-spacing:.05em !important;
+  }
+}
+
+@media (max-width: 390px){
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid{
+    width:calc(100% - 18px) !important;
+  }
+
+  body.gallery-page .gallery-project__grid{
+    gap:10px !important;
+  }
+}
