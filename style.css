@@ -5173,3 +5173,31 @@ body.gallery-page .gallery-card--wide figcaption {
     line-height: 1.35 !important;
   }
 }
+
+
+/* V48 — większe realizacje na telefonie */
+@media (max-width: 680px) {
+  body.gallery-page .gallery-project__head,
+  body.gallery-page .gallery-project__grid {
+    width: calc(100% - 12px) !important;
+  }
+
+  body.gallery-page .gallery-project__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  body.gallery-page .gallery-project__grid .gallery-card img,
+  body.gallery-page .gallery-project__grid .gallery-card:hover img,
+  body.gallery-page .gallery-project__grid .gallery-card--wide img,
+  body.gallery-page .gallery-project__grid .gallery-card--wide:hover img {
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 18px !important;
+  }
+
+  body.gallery-page .gallery-card figcaption,
+  body.gallery-page .gallery-card--wide figcaption {
+    margin-top: 8px !important;
+    font-size: 11px !important;
+  }
+}
