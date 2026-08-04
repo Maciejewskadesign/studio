@@ -5218,3 +5218,30 @@ body.gallery-page .gallery-card--wide figcaption {
     line-height: 1.35 !important;
   }
 }
+
+
+/* V50 — galeria: usuń wskazaną kuchnię i ikonki IG/FB w mobile menu */
+@media (max-width: 920px) {
+  body.gallery-page .site-nav__extras.mobile-only {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+  }
+
+  body.gallery-page .site-nav__extras.mobile-only > a.site-nav__social {
+    width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  body.gallery-page .site-nav__extras.mobile-only > a.site-nav__social svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
